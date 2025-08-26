@@ -1,3 +1,8 @@
 # ivent_trial
 
-A new Flutter project.
+GetMaterialApp()
+GetView<>
+
+GetX bindings
+GetX routes
+GetX controller
