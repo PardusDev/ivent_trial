@@ -61,11 +61,15 @@ lib/
 │       ├── app_icons.dart   # SVG icon enum'ları
 │       └── app_images.dart  # Image asset enum'ları
 ├── product/                  # Reusable product components
+│   ├── snackbar/
+│   │   └── app_snackbar.dart # Global snackbar (AppBar altında)
 │   ├── utils/               # Utility classes
-│   │   └── phone_utils.dart # Telefon numarası validasyon utilities
+│   │   ├── phone_utils.dart # Telefon numarası validasyon utilities
+│   │   └── time_utils.dart  # Süre formatlama (MM:SS)
 │   └── widgets/             # Custom widget components
-│       ├── continue_button.dart    # Primary action button
+│       ├── continue_button.dart    # PrimaryButton (eski ContinueButton)
 │       ├── default_app_bar.dart    # Standard app bar
+│       ├── otp_input_field.dart    # 6 haneli OTP kutuları
 │       └── phone_input_field.dart  # Phone number input field
 ├── view/                     # UI Screens (Feature-based)
 │   └── authentication/      # Authentication flow
@@ -74,11 +78,17 @@ lib/
 │           │   └── phone_verification_controller.dart
 │           └── view/
 │               └── phone_verification_view.dart
+│       └── otp_verification/
+│           ├── controller/
+│           │   └── otp_verification_controller.dart
+│           └── view/
+│               └── otp_verification_view.dart
 └── main.dart                # Uygulama giriş noktası
 
 test/                        # Test files
-└── view/authentication/phone_verification/
-    └── phone_verification_view_test.dart
+└── view/authentication/
+    ├── phone_verification/phone_verification_view_test.dart
+    └── otp_verification/otp_verification_view_test.dart
 ```
 
 ### 🎨 Design System
@@ -131,9 +141,9 @@ test/                        # Test files
 - **Input restriction**: Sadece rakam girişi, 10 karakter limit
 - **Visual feedback**: Text renk değişimi
 
-#### ContinueButton Widget
+#### PrimaryButton Widget (eski ContinueButton)
 - **Primary action button**: Ana aksiyonlar için
-- **Loading state**: Async işlemler için loading göstergesi
+- **Loading state**: Async işlemler için opsiyonel
 - **Disable state**: Validation failed durumlarında
 - **Consistent styling**: Design system uyumlu
 
@@ -149,6 +159,9 @@ test/                        # Test files
 - **Phone formatting**: Otomatik formatlama utilities
 - **Clean phone extraction**: Format'tan temiz numara çıkarma
 - **Display formatting**: Gösterim için formatlama
+
+#### TimeUtils Utility Class
+- **formatSecondsToMinutesSeconds**: Saniyeyi MM:SS'e çevirir (örn. 180 → 03:00)
 
 #### Hobi Kategorileri
 Uygulama içinde kullanılacak hobi kategorileri önceden tanımlanmıştır:
@@ -172,8 +185,8 @@ Uygulama içinde kullanılacak hobi kategorileri önceden tanımlanmıştır:
 - [x] **Comprehensive testing** - 17 farklı test case
 - [x] **Routing system** - GetX navigation setup
 
-### 🔄 Geliştirilecek (Bilgiler 3.png & 4.png)
-- [ ] **OTP Verification Screen** - SMS kodu doğrulama
+### 🔄 Geliştirilecek
+- [ ] **Ad Soyad Girişi** - OTP onayı sonrası kullanıcının ad soyadının alınacağı ekran
 
 ## 📱 Implementasyonu Tamamlanan Ekranlar
 
@@ -196,15 +209,19 @@ Uygulama içinde kullanılacak hobi kategorileri önceden tanımlanmıştır:
 - `PhoneUtils` - Validation utilities
 - 17 test case ile %100 test coverage
 
-### 2. Hedeflenen Sonraki Ekranlar
-`iVent UI` klasöründeki kalan tasarım görselleri (Bilgiler 3-8.png) referans alınarak geliştirilecek:
+### 2. OTP Verification Screen ✅
+**Bilgiler 3-4 görevleri tamamlandı**
 
-1. **OTP Verification** - SMS kodu doğrulama
+**Özellikler:**
+- 6 haneli OTP, her hane ayrı kutuda
+- 3 dakikalık geri sayım (TimeUtils) ve “Tekrar Gönder (MM:SS)” butonu
+- 6 hane dolunca otomatik doğrulama (buton yok), doğru kod: 123456
+- Ekranda loading göstergesi kullanılmıyor
 
 ## 🧪 Test Yapısı
 
 ### Test Coverage
-- **17 test case** - Phone verification screen için
+- Phone ve OTP akışları için widget/controller/integration testleri
 
 ### Test Scenarios
 - Component rendering tests
@@ -300,7 +317,7 @@ Bu proje ile aşağıdaki konularda pratik yapılması hedeflenmektedir:
 3. **Phase 3**: Authentication Flow (Phone Verification) ✅
 
 ### Devam Eden Aşamalar
-4. **Phase 4**: OTP Verification Implementation 🔄
+4. **Phase 4**: Ad & soyad girişi 🔄
 
 ## 🤝 Katkıda Bulunma
 

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:ivent_trial/core/constants/app_colors.dart';
 import 'package:ivent_trial/core/constants/app_text_styles.dart';
 
-class ContinueButton extends StatelessWidget {
-  const ContinueButton({
+class PrimaryButton extends StatelessWidget {
+  const PrimaryButton({
     required this.text,
     required this.onPressed,
     this.isLoading = false,

@@ -39,7 +39,7 @@ void main() {
         findsOneWidget,
       );
       expect(find.byType(PhoneInputField), findsOneWidget);
-      expect(find.byType(ContinueButton), findsOneWidget);
+      expect(find.byType(PrimaryButton), findsOneWidget);
       expect(find.text('Devam Et'), findsOneWidget);
     });
 
@@ -64,7 +64,7 @@ void main() {
       // Assert
       final continueButton = tester.widget<ElevatedButton>(
         find.descendant(
-          of: find.byType(ContinueButton),
+          of: find.byType(PrimaryButton),
           matching: find.byType(ElevatedButton),
         ),
       );
@@ -100,7 +100,7 @@ void main() {
         // Assert
         final continueButton = tester.widget<ElevatedButton>(
           find.descendant(
-            of: find.byType(ContinueButton),
+            of: find.byType(PrimaryButton),
             matching: find.byType(ElevatedButton),
           ),
         );
@@ -122,7 +122,7 @@ void main() {
         // Assert
         final continueButton = tester.widget<ElevatedButton>(
           find.descendant(
-            of: find.byType(ContinueButton),
+            of: find.byType(PrimaryButton),
             matching: find.byType(ElevatedButton),
           ),
         );
@@ -144,7 +144,7 @@ void main() {
         // Assert
         final continueButton = tester.widget<ElevatedButton>(
           find.descendant(
-            of: find.byType(ContinueButton),
+            of: find.byType(PrimaryButton),
             matching: find.byType(ElevatedButton),
           ),
         );
@@ -197,7 +197,7 @@ void main() {
         // Assert - Button should be enabled and phone number stored
         final continueButton = tester.widget<ElevatedButton>(
           find.descendant(
-            of: find.byType(ContinueButton),
+            of: find.byType(PrimaryButton),
             matching: find.byType(ElevatedButton),
           ),
         );
@@ -238,7 +238,7 @@ void main() {
 
           final continueButton = tester.widget<ElevatedButton>(
             find.descendant(
-              of: find.byType(ContinueButton),
+              of: find.byType(PrimaryButton),
               matching: find.byType(ElevatedButton),
             ),
           );
@@ -269,7 +269,7 @@ void main() {
 
           final continueButton = tester.widget<ElevatedButton>(
             find.descendant(
-              of: find.byType(ContinueButton),
+              of: find.byType(PrimaryButton),
               matching: find.byType(ElevatedButton),
             ),
           );

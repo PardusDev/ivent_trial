@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ivent_trial/core/constants/app_colors.dart';
+import 'package:ivent_trial/product/snackbar/app_snackbar.dart';
 import 'package:ivent_trial/product/utils/phone_utils.dart';
+import 'package:ivent_trial/core/routes/app_routes.dart';
 
 class PhoneVerificationController extends GetxController {
   // Text controller
@@ -51,25 +52,15 @@ class PhoneVerificationController extends GetxController {
       // Simulate API call
       await Future.delayed(const Duration(seconds: 2));
 
-      Get.snackbar(
-        'Başarılı',
-        'Doğrulama kodu gönderildi',
-        backgroundColor: AppColors.primary,
-        colorText: AppColors.white,
-      );
+      AppSnackbar.showSuccess('Başarılı', 'Doğrulama kodu gönderildi');
 
       // Navigate to OTP verification screen
       Get.toNamed(
-        '/otp-verification',
+        AppRoutes.otpVerification,
         arguments: {'phoneNumber': phoneNumber.value},
       );
     } catch (e) {
-      Get.snackbar(
-        'Hata',
-        'Kod gönderilemedi. Tekrar deneyin.',
-        backgroundColor: AppColors.error,
-        colorText: AppColors.white,
-      );
+      AppSnackbar.showErrorWithoutTitle('Kod gönderilemedi. Tekrar deneyin.');
     }
   }
 

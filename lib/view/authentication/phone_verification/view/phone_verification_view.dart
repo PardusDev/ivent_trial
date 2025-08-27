@@ -100,7 +100,7 @@ class _ContinueButtonSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Obx(
-      () => ContinueButton(
+      () => PrimaryButton(
         text: 'Devam Et',
         onPressed: controller.canContinueRx.value
             ? controller.sendPhoneNumber
