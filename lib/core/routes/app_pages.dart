@@ -3,6 +3,7 @@ import 'package:ivent_trial/core/routes/app_routes.dart';
 import 'package:ivent_trial/view/authentication/otp_verification/view/otp_verification_view.dart';
 import 'package:ivent_trial/view/authentication/phone_verification/view/phone_verification_view.dart';
 import 'package:ivent_trial/view/dashboard/dashboard_view.dart';
+import 'package:ivent_trial/view/authentication/name_surname/view/name_surname_view.dart';
 
 class AppPages {
   AppPages._();
@@ -17,5 +18,6 @@ class AppPages {
       page: () => const OtpVerificationView(),
     ),
     GetPage(name: AppRoutes.dashboard, page: () => const DashboardView()),
+    GetPage(name: AppRoutes.nameSurname, page: () => const NameSurnameView()),
   ];
 }

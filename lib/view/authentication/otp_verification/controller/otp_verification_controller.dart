@@ -99,7 +99,7 @@ class OtpVerificationController extends GetxController {
       // Simulate verification logic
       if (otpCode.value == '123456') {
         // Navigate to next screen (dashboard)
-        Get.offAllNamed(AppRoutes.dashboard);
+        Get.offAllNamed(AppRoutes.nameSurname);
 
         AppSnackbar.showSuccess(
           'Başarılı',
