@@ -15,7 +15,7 @@ class MainApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'iVent Trial',
       debugShowCheckedModeBanner: false,
-      initialRoute: AppRoutes.phoneVerification,
+      initialRoute: AppRoutes.nameSurname,
       getPages: AppPages.pages,
     );
   }
