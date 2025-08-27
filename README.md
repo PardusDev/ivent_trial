@@ -348,9 +348,9 @@ Bu bir öğrenme projesi olduğu için:
 ## 📊 Proje İstatistikleri
 
 - **Toplam Dosya**: 20+ Dart dosyası
-- **Test Coverage**: 17 test case
-- **Widget Sayısı**: 8 custom widget
-- **Ekran Sayısı**: 1 tamamlandı, 3 planlı
+- **Test Coverage**: 58 test case
+- **Widget Sayısı**: 9 custom widget
+- **Ekran Sayısı**: 3 tamamlandı, 1 planlı
 - **Utility Classes**: 2 (PhoneUtils, AppColors vb.)
 - **Asset Sayısı**: 11 SVG icon + 1 PNG image + 9 font weight
 
@@ -360,5 +360,5 @@ Bu proje eğitim amaçlı geliştirilmiştir ve açık kaynak kodludur.
 
 ---
 
-**Son Güncelleme**: Phone Verification Screen implementasyonu tamamlandı (Bilgiler 1.png & 2.png görevleri)  
-**Geliştirilme**: OTP Verification Screen (Bilgiler 3.png & 4.png hedefleniyor)
+**Son Güncelleme**: Name & Surname Screen implementasyonu ve testleri tamamlandı (Bilgiler 5.png & 6.png görevleri)  
+**Geliştirilme**: İlgi alanı seçimi ekranı (Bilgiler 7.png hedefleniyor)
