@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:get/get.dart';
 import 'package:ivent_trial/product/widgets/otp_input_field.dart';
+import 'package:ivent_trial/view/authentication/name_surname/view/name_surname_view.dart';
 import 'package:ivent_trial/view/authentication/otp_verification/controller/otp_verification_controller.dart';
 import 'package:ivent_trial/view/authentication/otp_verification/view/otp_verification_view.dart';
 import 'package:ivent_trial/view/dashboard/dashboard_view.dart';
@@ -28,6 +29,7 @@ void main() {
             name: '/otp-verification',
             page: () => const OtpVerificationView(),
           ),
+          GetPage(name: '/name-surname', page: () => const NameSurnameView()),
           GetPage(name: '/dashboard', page: () => const DashboardView()),
         ],
       );
@@ -269,8 +271,8 @@ void main() {
         await tester.pump(const Duration(seconds: 2));
         await tester.pumpAndSettle();
 
-        // Expect dashboard view after auto-verify
-        expect(find.byType(DashboardView), findsOneWidget);
+        // Expect name surname view after auto-verify
+        expect(find.byType(NameSurnameView), findsOneWidget);
       });
     });
   });
