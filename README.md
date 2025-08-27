@@ -171,7 +171,7 @@ Uygulama içinde kullanılacak hobi kategorileri önceden tanımlanmıştır:
 
 ## 🚀 Gelişim Durumu
 
-### ✅ Tamamlanan (Bilgiler 1.png & 2.png)
+### ✅ Tamamlanan (Bilgiler 1.png, 2.png, 3.png, 4.png, 5.png, 6.png)
 - [x] Proje kurulumu ve initial setup
 - [x] **GetX mimarisi kurulumu** (GetMaterialApp, routing)
 - [x] **Design system implementasyonu** (colors, typography, icons, images)
@@ -182,11 +182,13 @@ Uygulama içinde kullanılacak hobi kategorileri önceden tanımlanmıştır:
 - [x] **GetX Controller implementasyonu** - Reactive state management
 - [x] **Custom Widget Library** - Reusable components
 - [x] **Phone validation utility** - Türkiye telefon numarası validasyonu
+- [x] **OTP validation** - OTP kodu validasyonu
+- [x] **Ad soyad ekranı** - Ad soyad ekranı
 - [x] **Comprehensive testing** - 17 farklı test case
 - [x] **Routing system** - GetX navigation setup
 
 ### 🔄 Geliştirilecek
-- [ ] **Ad Soyad Girişi** - OTP onayı sonrası kullanıcının ad soyadının alınacağı ekran
+- [ ] **İlgi alanı**
 
 ## 📱 Implementasyonu Tamamlanan Ekranlar
 
@@ -217,6 +219,21 @@ Uygulama içinde kullanılacak hobi kategorileri önceden tanımlanmıştır:
 - 3 dakikalık geri sayım (TimeUtils) ve “Tekrar Gönder (MM:SS)” butonu
 - 6 hane dolunca otomatik doğrulama (buton yok), doğru kod: 123456
 - Ekranda loading göstergesi kullanılmıyor
+
+### 3. Name & Surname Screen ✅
+**Bilgiler 5-6 görevleri tamamlandı**
+
+**Özellikler:**
+- Tek metin alanı: “Adınız Soyadınız” (bordersız, merkezde, bold24)
+- Yazım sırasında otomatik Title Case (her kelimenin ilk harfi büyük)
+- Hint rengi `grey500`, yazı girilince `veryDarkGrey`
+- Validasyon: En az iki kelime, her biri min 2 karakter
+- “Devam Et” butonu validasyona bağlı aktif/pasif
+
+**Teknik Detaylar:**
+- `NameSurnameInput` (product/widgets) reusable bileşen
+- `NameSurnameController` (tek alan validasyonu, yönlendirme)
+- Route: `AppRoutes.nameSurname`, `AppPages` içinde tanımlı
 
 ## 🧪 Test Yapısı
 
