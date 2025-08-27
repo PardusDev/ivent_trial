@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ivent_trial/view/authentication/phone_verification/view/phone_verification_view.dart';
+import 'package:ivent_trial/core/routes/app_pages.dart';
+import 'package:ivent_trial/core/routes/app_routes.dart';
 
 void main() {
   runApp(const MainApp());
@@ -14,13 +15,8 @@ class MainApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'iVent Trial',
       debugShowCheckedModeBanner: false,
-      home: const PhoneVerificationView(),
-      getPages: [
-        GetPage(
-          name: '/phone-verification',
-          page: () => const PhoneVerificationView(),
-        ),
-      ],
+      initialRoute: AppRoutes.phoneVerification,
+      getPages: AppPages.pages,
     );
   }
 }
